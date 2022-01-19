@@ -1,16 +1,23 @@
 <template>
-	<swiper class="swiper" :options="swiperOption">
-		<swiper-slide class="swiper-slide box1" style="background-color: yellow"
-			>Slide 1</swiper-slide
-		>
-		<swiper-slide class="swiper-slide box2">Slide 2</swiper-slide>
-		<swiper-slide class="swiper-slide box3">Slide 3</swiper-slide>
-		<swiper-slide class="swiper-slide box4">Slide 4</swiper-slide>
-		<swiper-slide class="swiper-slide box5">Slide 5</swiper-slide>
-		<div class="swiper-pagination" slot="pagination"></div>
-		<div class="swiper-button-prev" slot="button-prev"></div>
-		<div class="swiper-button-next" slot="button-next"></div>
-	</swiper>
+	<div>
+		<swiper class="swiper" :options="swiperOption">
+			<swiper-slide
+				class="swiper-slide"
+				v-for="(url, key) in imgUrl"
+				:key="key"
+				:style="
+					'background:url(' +
+					require('../assets/img/banner1/' + url) +
+					') no-repeat center center/cover'
+				"
+			>
+				Slide{{ url }}
+			</swiper-slide>
+			<div class="swiper-pagination" slot="pagination"></div>
+			<div class="swiper-button-prev" slot="button-prev"></div>
+			<div class="swiper-button-next" slot="button-next"></div>
+		</swiper>
+	</div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
@@ -20,6 +27,7 @@ export default {
 		Swiper,
 		SwiperSlide,
 	},
+	props: ['imgUrl'],
 	data() {
 		return {
 			swiperOption: {
@@ -52,22 +60,6 @@ export default {
 		.swiper-slide {
 			width: 100%;
 			height: 100%;
-
-			&.box1 {
-				background: pink;
-			}
-			&.box2 {
-				background: orange;
-			}
-			&.box3 {
-				background: lightblue;
-			}
-			&.box4 {
-				background: lightgreen;
-			}
-			&.box5 {
-				background: violet;
-			}
 		}
 	}
 }
