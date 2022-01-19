@@ -1,5 +1,6 @@
 # ediya_clone
 
+How to build
 ```
-git push -f https://github.com/kimzerovirus/ediya_clone.git main:gh-pages
+npm run deploy
 ```
