@@ -5,13 +5,8 @@
 				class="swiper-slide"
 				v-for="(url, key) in imgUrl"
 				:key="key"
-				:style="
-					'background:url(' +
-					require('../assets/img/banner1/' + url) +
-					') no-repeat center center/cover'
-				"
 			>
-				Slide{{ url }}
+				<img :src="require('../assets/img/banner1/' + url)" alt="" />
 			</swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 			<div class="swiper-button-prev" slot="button-prev"></div>
@@ -33,7 +28,7 @@ export default {
 			swiperOption: {
 				loop: true,
 				slidesPerView: 1,
-				spaceBetween: 30,
+				spaceBetween: 0,
 				pagination: { el: '.swiper-pagination', clickable: true },
 				navigation: {
 					nextEl: '.swiper-button-next',
@@ -50,16 +45,12 @@ export default {
 
 <style lang="scss" scoped>
 .swiper {
-	width: 600px;
-	height: 300px;
-	border: 1px solid #000;
-	margin: 100px auto;
+	margin: 0 auto;
 	position: relative;
 
 	.swiper-slide {
 		.swiper-slide {
-			width: 100%;
-			height: 100%;
+			overflow: hidden;
 		}
 	}
 }

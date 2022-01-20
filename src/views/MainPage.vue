@@ -1,6 +1,6 @@
 <template>
 	<div id="wrapper">
-		<Swiper :imgUrl="SlideData.banner1" />
+		<Swiper :imgUrl="SlideData.banner1" class="banner1" />
 	</div>
 </template>
 
@@ -18,4 +18,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#wrapper {
+	.banner1 {
+		width: 1180px;
+		margin: 0 auto;
+	}
+}
+</style>

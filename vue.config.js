@@ -2,6 +2,6 @@ module.exports = {
 	devServer: {
 		overlay: false,
 	},
-	publicPath: '/ediya_clone/',
+	publicPath: '/swiper/',
 	outputDir: './docs',
 };
